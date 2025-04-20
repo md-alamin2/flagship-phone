@@ -9,21 +9,24 @@ const Home = () => {
   const data = useLoaderData();
   const [phones, setPhones] = useState(data);
 
+  // search function
   const handleSearch = (e, text) => {
     e.preventDefault();
     if(text.length==0){
       return setPhones(data)
     }
-    console.log(text);
     const searchedPhones = data.filter((phone) =>
       phone.name.toLowerCase().split(" ").includes(text.toLowerCase()) ||
         phone.brand.toLowerCase().split(" ").includes(text.toLowerCase())
     );
     setPhones(searchedPhones);;
   };
+  
   return (
     <div>
+      {/* hero section */}
       <Hero handleSearch={handleSearch}></Hero>
+      {/* phone container section */}
       <PhonesContainer phones={phones}></PhonesContainer>
     </div>
   );

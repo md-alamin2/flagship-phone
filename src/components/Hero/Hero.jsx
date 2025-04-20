@@ -6,11 +6,14 @@ const Hero = ({handleSearch}) => {
   const [searchText, setSearchText]=useState("");
   return (
     <div className="py-12">
+      {/* banner image */}
       <img
         src={bannerImage}
         alt="Banner-image"
         className="w-full mx-auto md:max-w-xl"
       />
+      
+      {/* hero section title */}
       <div className="space-y-4 text-center">
         <h1 className="font-thin text-7xl text-gray-900">
           Brows, Search, view, Buy
@@ -19,6 +22,8 @@ const Hero = ({handleSearch}) => {
           Best place to brows, search, view details and purchase of top flagship
           phones of the current time -FlagshipPhones
         </p>
+
+        {/* search box */}
         <form onSubmit={(e)=>{
           handleSearch(e, searchText)
           setSearchText("")

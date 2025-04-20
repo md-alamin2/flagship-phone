@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router";
+import { MdDeleteForever } from "react-icons/md";
 
-const PhoneCard = ({ phone }) => {
+const PhoneCard = ({ phone, deletable, handleDelete }) => {
   const { name, image, description, id } = phone || {};
   return (
     <div className="card bg-base-100 shadow-sm">
@@ -12,10 +13,8 @@ const PhoneCard = ({ phone }) => {
         <h2 className="card-title">{name}</h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          <Link to={`phone-details/${id}`}>
-            <button
-              className="btn relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
-            >
+          <Link to={`../phone-details/${id}`}>
+            <button className="btn relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
               <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
               <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
                 <svg
@@ -56,6 +55,11 @@ const PhoneCard = ({ phone }) => {
           </Link>
         </div>
       </div>
+      {deletable && (
+        <div onClick={()=>handleDelete(id)} className="absolute -top-2 -right-3 bg-gray-400 p-2 rounded-full hover:bg-gray-600 hover:text-white cursor-pointer">
+          <MdDeleteForever size={30} />
+        </div>
+      )}
     </div>
   );
 };

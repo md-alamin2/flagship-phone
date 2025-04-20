@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { MdShoppingCart, MdBookmarkAdd } from "react-icons/md";
 import MainButton from "../../components/Buttons/MainButton";
+import { addFavorite, addToCart } from "../../Utility/localStorge";
 
 const PhoneDetails = () => {
   const data = useLoaderData();
@@ -17,20 +18,35 @@ const PhoneDetails = () => {
     storage,
     camera_info,
   } = singlePhone || {};
+  // add favorite item function
+  const handleAddFavorite = () => {
+    addFavorite(singlePhone);
+  };
+
+  // added to cart function
+  const handleAddToCart = () => {
+    addToCart(singlePhone);
+  };
   return (
     <div className="mt-20">
       <img src={image} alt="phone" className="w-full md:w-lg mx-auto" />
       <div className="flex justify-between items-center">
         <h1 className="font-thin text-6xl">{name}</h1>
         <div className="flex items-center gap-3">
-          <MainButton label={<MdShoppingCart></MdShoppingCart>}></MainButton>
+          <MainButton
+            onClick={handleAddToCart}
+            label={<MdShoppingCart></MdShoppingCart>}
+          ></MainButton>
 
-          <MainButton label={<MdBookmarkAdd></MdBookmarkAdd>}></MainButton>
+          <MainButton
+            onClick={handleAddFavorite}
+            label={<MdBookmarkAdd></MdBookmarkAdd>}
+          ></MainButton>
         </div>
       </div>
       <div className="space-y-4 mt-5 w-full">
         <h2 className="font-thin text-4xl">Details: </h2>
-      <div className="divider"></div>
+        <div className="divider"></div>
         <p>
           <span className="font-bold">Brand:</span> {brand}
         </p>

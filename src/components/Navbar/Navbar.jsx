@@ -5,6 +5,7 @@ import { MdShoppingCart, MdBookmarkAdd } from "react-icons/md";
 const Navbar = () => {
   return (
     <div className="navbar p-0 bg-base-100 w-11/12 lg:container mx-auto">
+      {/* small device drop down menu */}
       <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,10 +43,13 @@ const Navbar = () => {
           </li>
           </ul>
         </div>
+        {/* logo */}
         <Link to="/" className="text-xl font-bold">
           FlagshipPhones
         </Link>
       </div>
+
+      {/* large device nav menu */}
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li className="font-bold">
@@ -55,7 +59,7 @@ const Navbar = () => {
             <NavLink to="about" className={({isActive})=> isActive? "text-indigo-500":""}>About</NavLink>
           </li>
           <li className="font-bold">
-            <NavLink to="cart" className={({isActive})=> isActive? "text-indigo-500":""}><MdShoppingCart size={20} /></NavLink>
+            <NavLink to="carts" className={({isActive})=> isActive? "text-indigo-500":""}><MdShoppingCart size={20} /></NavLink>
           </li>
           <li className="font-bold">
             <NavLink to="favorites" className={({isActive})=> isActive? "text-indigo-500":""}><MdBookmarkAdd size={20} /></NavLink>
