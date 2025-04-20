@@ -4,7 +4,7 @@ import { MdShoppingCart, MdBookmarkAdd } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 w-11/12 lg:container mx-auto">
+    <div className="navbar p-0 bg-base-100 w-11/12 lg:container mx-auto">
       <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
