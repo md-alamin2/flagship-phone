@@ -63,7 +63,7 @@ const Navbar = () => {
           </li>
           <li className="font-bold">
             <NavLink to="carts" className={({isActive})=> isActive? "text-indigo-500":""}><MdShoppingCart size={20} />
-            <p className="relative top-0 right-0">{cart.length}</p>
+            <p className="absolute -top-1 right-1">{cart.length}</p>
             </NavLink>
           </li>
           <li className="font-bold">
