@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { MdShoppingCart, MdBookmarkAdd } from "react-icons/md";
 import MainButton from "../../components/Buttons/MainButton";
-import { addFavorite, addToCart } from "../../Utility/localStorge";
+import { addFavorite, addToCart, getCart } from "../../Utility/localStorge";
+import { CartContext } from "../../Providers/Context";
 
 const PhoneDetails = () => {
+  const {setCart} = useContext(CartContext)
   const data = useLoaderData();
   const { id } = useParams();
   const singlePhone = data.find((phone) => phone.id === parseInt(id));
@@ -26,6 +28,7 @@ const PhoneDetails = () => {
   // added to cart function
   const handleAddToCart = () => {
     addToCart(singlePhone);
+    setCart(getCart())
   };
   return (
     <div className="mt-20">

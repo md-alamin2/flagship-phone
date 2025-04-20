@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import { MdShoppingCart, MdBookmarkAdd } from "react-icons/md";
+import { CartContext } from "../../Providers/Context";
 
 const Navbar = () => {
+  const {cart}= useContext(CartContext);
+  console.log(cart);
   return (
     <div className="navbar p-0 bg-base-100 w-11/12 lg:container mx-auto">
       {/* small device drop down menu */}
@@ -59,7 +62,9 @@ const Navbar = () => {
             <NavLink to="about" className={({isActive})=> isActive? "text-indigo-500":""}>About</NavLink>
           </li>
           <li className="font-bold">
-            <NavLink to="carts" className={({isActive})=> isActive? "text-indigo-500":""}><MdShoppingCart size={20} /></NavLink>
+            <NavLink to="carts" className={({isActive})=> isActive? "text-indigo-500":""}><MdShoppingCart size={20} />
+            <p className="relative top-0 right-0">{cart.length}</p>
+            </NavLink>
           </li>
           <li className="font-bold">
             <NavLink to="favorites" className={({isActive})=> isActive? "text-indigo-500":""}><MdBookmarkAdd size={20} /></NavLink>
