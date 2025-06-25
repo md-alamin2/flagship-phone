@@ -24,15 +24,16 @@ Flagship Phones is a modern phone selling website where users can browse availab
 
 ## 🧩 Tech Stack & NPM Packages
 
-### 📦 Frontend
-- `react` (v19)
-- `react-router: 7.5.1`
-- `react-icons: 5.5.0`
-- `react-hot-toast: 2.5.2`
+### 📦 Frontend Libraries
+- `react` (^19.0.0) — Core library for building the user interface.
+- `react-router` (^7.5.1) — Enables client-side routing for seamless navigation.
+- `react-icons` (^5.5.0) — A library of popular icons for React applications.
+- `react-hot-toast` (^2.5.2) — Elegant toast notifications for feedback and alerts.
 
-### 🎨 UI & Styling
-- `tailwindcss: 4.1.4`
-- `daisyui: 5.0.27`
+### 🎨 Styling & UI
+- `tailwindcss` (^4.1.4) — A utility-first CSS framework for responsive design.
+- `daisyui` (^5.0.27) — A set of pre-styled Tailwind CSS UI components.
+
 
 ---
 
