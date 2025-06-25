@@ -44,12 +44,12 @@ If you want to run this project on your local machine, follow these steps:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/md-alamin2/flagship-phones.git
+git clone https://github.com/md-alamin2/flagship-phone
 ```
 ### 2️⃣ Navigate into the Project Folder
 
 ```bash
-cd flagship-phones
+cd flagship-phone
 ```
 ### 3️⃣ Install Dependencies
 
